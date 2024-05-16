@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/esfera.png" type="image/x-icon">
+    <!-- Site do Ryan -->
+    <link rel="stylesheet" href="https://site-spartoi.vercel.app/../assets/css/style.css">
+    <script src="https://site-spartoi.vercel.app/../assets/js/script.js" defer></script>
+         <!-- Unicons CSS -->
+     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+     <!-- Bootstrap 4.1 -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+     <!-- Font-awe -->
+     <script src="https://kit.fontawesome.com/12a0142524.js" crossorigin="anonymous"></script>
+    <!-- Css e javacript -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/script.js" defer></script>
+    <title>Requisição Assíncrona com fetch</title>
+</head>
+<body>
+     <!-- ----- V-librass -------- -->
+
+  <div vw class="enabled" style="background-color: transparent;z-index: 1000;">
+    <div vw-access-button class="active" ></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper" ></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <!-- ----------- Header ---------------- -->
+<header>
+    <nav class="header" id="header">
+      <i class="uil uil-bars abrir-subheader"></i>
+      <a class="logo-A" href="../index.html"><img src="../assets/img/esfera.png" alt="esfera" class="logo-header">SparTask</a>
+
+      <ul class="header-links">
+        <i class="uil uil-times fechar-subheader"></i>
+        <li><a class="link-nav " href="../index.html">Home</a></li>
+        <li><a class="link-nav active-link" href="#">Sobre</a></li>
+      </ul>
+
+      <i id="searchIcon"> <img src="../assets/img/esfera.png" alt="esfera" class="logo-header"></i>
+      <div class="search-box">
+        <i class="uil uil-search search-icon"></i>
+        <input type="text" placeholder="Pesquise aqui..." />
+      </div>
+    </nav>
+</header>
+<!-- ---------------- Pessoas ------------------------ -->
+
+ <!-- -------------- Seção Filiais --------------- -->
+
+ <section>
+    <br><br><br>
+    <div class="container">
+      <h1 class="h1-produtos">Integrantes</h1>
+    <div class="row ">
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <div class="card_filiais">
+            <div class="imgBx">
+                <img src="../assets/img/Imagem do WhatsApp de 2024-04-03 à(s) 18.45.41_0b9df55e.jpg" alt="websiteprofissional">
+            </div>
+            <div class="contentBx ">
+                <h3>Ryan de Oliveira</h3>
+                <p class="buy">Atuou no projeto como programador full-stack.</p>
+            </div>
+        </div>
+        </div>
+
+  <br>
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <div class="card_filiais">
+            <div class="imgBx">
+                <img src="../assets/img/yury.jpg" alt="websiteprofissional">
+            </div>
+            <div class="contentBx ">
+                <h3>Yury Rosa</h3>
+                <p class="buy">Responsável pelo design e estrutura do projeto.</p>
+            </div>
+        </div>
+      </div>
+  <br>
+      <div class="col-md-4 d-flex justify-content-center align-items-center">
+        <div class="card_filiais">
+          <div class="imgBx">
+              <img src="../assets/img/leo.jpg" alt="websiteprofissional">
+          </div>
+          <div class="contentBx ">
+              <h3>Leonardo Nascimento</h3>
+              <p class="buy">Atuou como programador front-end do projeto (HTML e CSS). </p>
+          </div>
+      </div>
+    </div>
+    <br>
+    <div class="col-md-4 d-flex justify-content-center align-items-center">
+      <div class="card_filiais">
+        <div class="imgBx">
+            <img src="../assets/img/theus.jpg" alt="websiteprofissional">
+        </div>
+        <div class="contentBx ">
+            <h3>Matheus Pereira</h3>
+            <p class="buy">Responsável pela estrutura de pastas do projeto.</p>
+        </div>
+    </div>
+  </div>
+  <br>
+  <div class="col-md-4 d-flex justify-content-center align-items-center">
+    <div class="card_filiais">
+      <div class="imgBx">
+          <img src="../assets/img/nieba.jpg" alt="websiteprofissional">
+      </div>
+      <div class="contentBx ">
+          <h3>Danilo Angelus</h3>
+          <p class="buy">Responsável pela documentação do projeto.</p>
+      </div>
+  </div>
+</div>
+  </div>
+  <br>
+
+  <br>
+  </section>
+
+
+<!-- ------------ Footer ------------- -->
+<footer class="footer-distributed">
+  <div class="footer-left">
+      <h3>SparTask</h3>
+      <p class="footer-company-name">Copyright © 2024 Ryan Bomfim All rights reserved</p>
+  </div>
+  <div class="footer-center">
+      <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>São Paulo</span>
+              Praia grande</p>
+      </div>
+
+      <div>
+          <i class="fa fa-phone"></i>
+          <p>+55 13 99606-1925</p>
+      </div>
+
+  </div>
+  <div class="footer-right">
+      <p class="footer-company-about">
+          <span>Sobre</span>
+          Website desenvolvido a fins educacionais e produzido por <br>
+           Ryan de Oliveira Carlos Bomfim<br>
+      </p>
+      <div class="footer-icons">
+          <a href="https://www.instagram.com/iam.ryan10/"><i class="fa fa-instagram"></i></a>
+      </div>
+  </div>
+</footer> <!-- /Fim da seção -->
+
+  </body>
+</html>

@@ -1,0 +1,17 @@
+* {
+    font-family: "poppins";
+    background: hsl(228, 6%, 8%);
+
+}
+body {
+    background: hsl(228, 6%, 8%);
+
+}
+.imgBx img{
+    width: 250px;
+    border-radius: 20px;
+}
+
+  .card_filiais::after{
+ display: none;
+  }
