@@ -40,7 +40,7 @@ dados.forEach(item => {
                     <div class="col-md-6">
                         <div class="container-col">
                             <div class="caixa-texto-home">
-                                <h1 class="h1-banner-2" id="title1" style="font-size: 30px;">
+                                <h1 class="title-quem-somos" id="title1" style="font-size: 30px;">
                                     ${item.title}
                                 </h1>
                                 <p class="texto-banner" id="texto1">
