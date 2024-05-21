@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/img/esfera.png" type="image/x-icon">
     <!-- Site do Ryan -->
-    <link rel="stylesheet" href="https://site-spartoi.vercel.app/assets/css/style.css">
-    <script src="https://site-spartoi.vercel.app/assets/js/script.js" defer></script>
+    <link rel="stylesheet" href="https://spartoi.vercel.app/assets/css/style.css">
+    <script src="https://spartoi.vercel.app/assets/js/script.js" defer></script>
          <!-- Unicons CSS -->
      <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
      <!-- Bootstrap 4.1 -->
@@ -22,22 +22,27 @@
     <title>Requisição Assíncrona com fetch</title>
 </head>
 <body>
-     <!-- ----- V-librass -------- -->
-
-  <div vw class="enabled" style="background-color: transparent;z-index: 1000;">
-    <div vw-access-button class="active" ></div>
+      <!-- ----- V-libras -------- -->
+   <div vw class="enabled bg-transparente" id="vlibras-container">
+    <div vw-access-button class="active"></div>
     <div vw-plugin-wrapper>
-      <div class="vw-plugin-top-wrapper" ></div>
+        <div class="vw-plugin-top-wrapper"></div>
     </div>
-  </div>
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script>
+</div>
+
+<!-- Fixed Icon -->
+<div id="colorToggle">
+    <i class="fas fa-sun"></i>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
-  </script>
+</script>
 
   <!-- ----------- Header ---------------- -->
 <header>
-    <nav class="header" id="header">
+    <nav class="header blur-header" id="header">
       <i class="uil uil-bars abrir-subheader"></i>
       <a class="logo-A" href="../index.html"><img src="assets/img/esfera.png" alt="esfera" class="logo-header">SparTask</a>
 
@@ -81,7 +86,7 @@
 <!-- ---------------- Noticias ----------------------- -->
     <div class="container">
       <br><br><br><br>
-      <h1 class="h1-banner text-center">NOTÍCIAS FEITAS COM ARRAY E REQUISIÇÃO ASSINCRONA</h1>
+      <h1 class="h1-banner-2 text-center">NOTÍCIAS FEITAS COM ARRAY E REQUISIÇÃO ASSINCRONA</h1>
     </div>
     <div id="dadoscapturados"></div>
 
@@ -108,7 +113,7 @@
       <p class="footer-company-about">
           <span>Sobre</span>
           Website desenvolvido a fins educacionais e produzido por <br>
-           Ryan de Oliveira Carlos Bomfim na Etec.<br>
+           Ryan de Oliveira Carlos Bomfim.<br>
       </p>
       <div class="footer-icons">
           <a href="https://www.instagram.com/iam.ryan10/"><i class="fa fa-instagram"></i></a>

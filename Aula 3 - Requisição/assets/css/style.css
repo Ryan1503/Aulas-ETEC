@@ -1,10 +1,8 @@
 * {
     font-family: "poppins";
-    background: hsl(228, 6%, 8%);
-
 }
 body {
-    background: hsl(228, 6%, 8%);
+    background: white;
 
 }
 .imgBx img{
