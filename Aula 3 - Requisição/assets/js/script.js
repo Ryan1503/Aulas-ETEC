@@ -1,66 +1,43 @@
+   // Função para fazer a requisição AJAX
    function fazerRequisicao() {
-    fetch('https://jsonplaceholder.typicode.com/posts/1')
+    const xml = new XMLHttpRequest(); // Cria um novo objeto XMLHttpRequest para fazer a requisição
 
-        .then(responseData => {
-const dados = [
-    {
-        user: "Ryan",
-        id: 1,
-        title: "Dragon Ball Daima é anunciado",
-        texto: "Esse será um anime original e promete voltar às origens da história, transformando o Goku e seus amigos em crianças. Estreará na temporada de anime do outono de 2024.        ",
-        img: "assets/img/dbz1.jpeg"
-    },
-    {
-        user: "Ryan",
-        id: 2,
-        title: "Dragon Ball: Sparking Zero, novo game de Dragon Ball será uma evolução da série",
-        texto: " O game trará os sentimentos nostálgicos à tona daqueles que cresceram jogando os jogos clássicos. Por enquanto, não há uma previsão de lançamento.",
-        img: "assets/img/jogo.jpg"
-    },
-    {
-        user: "Ryan",
-        id: 3,
-        title: "Dragon Ball Daima é anunciado",
-        texto: "Desenvolvemos softwares (Sites, Apps e entre outros), do jeito que você queira! Clique no botão abaixo e preencha as informações e detalhes do serviço.",
-        img: "assets/img/dbz1.jpeg"
-    }
-];
-const container = document.getElementById('dadoscapturados');
-dados.forEach(item => {
-    const section = document.createElement('section');
-    section.innerHTML = `
-        <section>
-            <div class="container" id="home-container">
-                <div class="row w-100">
-                    <div class="col-md-6">
-                        <div class="img-banner">
-                            <img src="${item.img}" class="img-fluid" alt="banner">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="container-col">
-                            <div class="caixa-texto-home">
-                                <h1 class="title-quem-somos" id="title1" style="font-size: 30px;">
-                                    ${item.title}
-                                </h1>
-                                <p class="texto-banner" id="texto1">
-                                    ${item.texto}
-                                </p>
-                                <h1 class="h1-banner-2" style="font-size: 15px;">
-                                    Postado por: ${item.user} e ID: ${item.id}
-                                </h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>`;
-    container.appendChild(section);
-});
+    xml.open('GET', 'https://jsonplaceholder.typicode.com/posts/1', true);
+    // Abre uma nova requisição GET assíncrona para o servidor web de teste
 
-})
-        .catch(error => {
-            document.getElementById('data').innerHTML = 'Erro ao carregar os dados.';
-        });
+    xml.onreadystatechange = function() { // Define uma função a ser chamada quando o estado da requisição mudar
+        if (xml.readyState === XMLHttpRequest.DONE) { // Verifica se a requisição está concluída
+            if (xml.status === 200) { // Verifica se a resposta da requisição foi bem-sucedida
+                const responseData = JSON.parse(xml.responseText); // Converte a resposta em formato JSON para um objeto JavaScript
+                manipularDados(responseData); // Chama a função para manipular os dados recebidos
+            } else {
+                manipularErro(); // Chama a função para manipular o caso de erro na requisição
+            }
+        }
+    };
+
+    xml.send(); // Envia a requisição
 }
-window.onload = fazerRequisicao;
+
+// Função para manipular os dados recebidos
+function manipularDados(data) {
+    const container = document.getElementById('dadoscapturados'); // Obtém a referência ao elemento HTML onde os dados serão exibidos
+
+    for (let i = 1; i <= 3; i++) { // Itera para os próximos 3 itens
+        const section = document.createElement('section'); // Cria um novo elemento HTML 'section'
+        section.innerHTML = `
+            <h2>${data.title}</h2>
+            <p>${data.body}</p>
+        `; // Preenche o conteúdo HTML da 'section' com os dados do item atual
+        container.appendChild(section); // Adiciona a 'section' ao container
+    }
+}
+
+// Função para manipular erro na requisição
+function manipularErro() {
+    const container = document.getElementById('dadoscapturados'); // Obtém a referência ao elemento HTML onde os dados serão exibidos
+    container.innerHTML = 'Erro ao carregar os dados.'; // Exibe uma mensagem de erro na página
+}
+
+// Chamada para fazer a requisição quando a janela é carregada
+window.onload = fazerRequisicao; // Define a função 'fazerRequisicao' para ser executada quando a janela é carregada
